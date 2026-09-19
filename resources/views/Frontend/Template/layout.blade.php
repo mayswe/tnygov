@@ -225,7 +225,7 @@
                         <div class="copy-text pt_15">
                         
                             <div class="footer-header text-center">{{__('messages.total_viewer')}}</div>
-                            <div id="visits">...</div>
+                            <div id="visits">{{ number_format($totalVisitors ?? 0) }}</div>
                          </div>
                         </div>
                    
@@ -286,12 +286,6 @@
     );
 });
 </script>
-<script>
-function cb(response) {
-    document.getElementById('visits').innerText = response.value;
-}
-</script>
-<script async src="https://api.countapi.xyz/hit/tanintharyi.gov.mm/visits?callback=cb"></script>
         </div>
     </body>
 </html>
