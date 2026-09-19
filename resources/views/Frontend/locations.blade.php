@@ -1,0 +1,171 @@
+@extends('Frontend.Template.layout')
+@section('title')
+Locations
+@endsection
+@section('content')
+<!-- start banner -->
+<div class="l-banner l-row">
+  
+  <div class="l-pr page__row pr-banner">
+    <div class="l-rw regions container pr-banner__rw arc--1 hr--1" data-at-regions="">
+      <div data-at-region="1" data-at-block-count="1" class="l-r region pr-banner__banner" id="rid-banner"><div id="block-aboutus" class="l-bl block block-config-provider--block-content block-plugin-id--block-content-1fd29712-bcec-428e-80c0-819b0be1b822 block--type-basic block--view-mode-full">
+  <div class="block__inner">
+
+    <div class="block__content">
+    <div class="clearfix text-formatted field field-block-content--body field-formatter-text-default field-name-body field-type-text-with-summary field-label-hidden has-single"
+    ><div class="field__items"
+    ><div class="field__item">
+    <h2 class="">{{__('messages.locations')}}</h2>
+</div></div>
+</div>
+</div></div>
+</div>
+</div>
+    </div>
+  </div>
+  
+</div>
+<!-- end banner -->
+<!--Blog Start-->
+<div class="page blog-area pt_35 pb_90">
+<!-- start breadcrumb -->
+<div class="container">
+<div class="row" >
+<nav aria-label="breadcrumb" style="width:100%">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">{{__('messages.home')}}</a></li>
+    <li class="breadcrumb-item active" aria-current="page">{{__('messages.locations')}}</li>
+  </ol>
+</nav>
+</div>
+</div>
+<!-- end breadcrumb -->
+
+<div class="container">
+<div class="row">
+<!-- start left -->
+<div class="col-8">
+<div class="col-12 pt_10">
+<div class="headline">
+    <h1>{{__('messages.locations')}}</h1>
+    <hr class="line">
+</div>
+</div>
+<div class="view-address-of-the-courts">
+<ul>
+
+            @foreach($news as $post)
+            <?php
+            if (App::isLocale('en')) {
+                $name = $post->title_en;
+                $content = $post->content_en;
+                $map = $post->map;
+            }else{
+
+                $name = $post->title;
+                $content = $post->content;
+                $map = $post->map;
+            }
+            ?>
+            
+    
+          <li>
+          <div class="views-field views-field-field-google-map-embed">
+          <div class="field-content">
+          
+          {!! $map !!}
+  
+</div></div>
+<div class="views-field-title">
+{{ $name }}
+</div>
+<div class="views-field views-field-body">
+<div class="field-content">
+{!! $content !!}
+</div></div></li>
+          
+      
+
+            @endforeach
+            </ul>
+    </div>
+<div class="col-12 pt_10 text-center">
+            {{ $news->links() }}
+</div>
+</div>
+<!-- end left -->
+<!-- start right -->
+<div id ="rid-sidebar-first" class="col-4">
+                <div id="rid-sidebar-first">
+                  <div id="block-views-block-block-latest-news-block-2">
+  <div class="block__inner">
+
+    <h2 id="block-views-block-block-latest-news-block-2-title">
+      <span>နောက်ဆုံးရ သတင်း</span>
+    </h2>
+      <div class="view-block-latest-news">
+        
+  
+    <div class="views-row">
+    <div class="views-field-title">
+      <a href="/my/node/190" >ကချင်ပြည်နယ်တရားလွှတ်တော်အဆောက်အအုံသစ်မြေနေရာကိစ္စတင်ပြခြင်း</a>
+    </div>
+    <div class="views-field views-field-field-post-date">
+    <time datetime="2021-01-25T05:18:29Z" class="datetime">2021-01-25</time>
+</div>
+  </div>
+    <div class="views-row">
+    <div class="views-field-title">
+        <a href="/my/node/140" >ပြည်ထောင်စုတရားလွှတ်တော်ချုပ်နှင့် တိုင်းဒေသကြီး/ပြည်နယ်တရားလွှတ်တော်များ၏ (၁၉)ကြိမ်မြောက် လုပ်ငန်းညှိနှိုင်းအစည်းအဝေးမှာကြားချက်များ ထပ်ဆင့်ရှင်းလင်းသည့်အခမ်းအနားကျင်းပ</a></div>
+        <div class="views-field views-field-field-post-date">
+            <time datetime="2020-09-04T07:47:52Z" class="datetime">2020-09-04</time>
+</div>
+  </div>
+    <div class="views-row">
+    <div class="views-field-title"><a href="/my/node/130" >နောင်မွန်းမြို့နယ်တရားရုံးအဆောက်အအုံသစ် ဖွင့်လှစ်ခြင်း</a></div>
+        <div class="views-field views-field-field-post-date"><time datetime="2020-08-20T09:34:10Z" class="datetime">2020-08-20</time>
+</div>
+  </div>
+    <div class="views-row">
+    <div class="views-field-title"><a href="/my/node/114" >ကချင်ပြည်နယ်တရားလွှတ်တော် တရားသူကြီးချုပ် မြစ်ကြီးနား အကျဉ်းထောင်အား ကြည့်ရှုစစ်ဆေး</a></div>
+        <div class="views-field views-field-field-post-date"><time datetime="2020-08-18T05:27:36Z" class="datetime">2020-08-18</time>
+</div>
+  </div>
+
+    </div>
+  
+          </div>
+</div>
+
+<div id="block-blockannualreports">
+  <div class="block__inner">
+
+    <h2 id="block-blockannualreports-title">
+      
+      <span>နှစ်စဉ် အစီအရင်ခံစာ</span>
+    </h2>
+      <div class="block__content">
+        <div>
+          <div class="field__items">
+        <div class="field__item">
+          <p>
+            <img height="472" src="https://kachin.hc.gov.mm/sites/default/files/2019%20annual%20report(cuted)_0.jpg" width="338">
+          </p>
+
+<p>
+  <a href="https://kachin.hc.gov.mm/my/annual-reports">၂၀၁၉ နှစ်စဉ် အစီအရင်ခံစာ</a>
+</p>
+</div>
+</div>
+</div>
+</div></div>
+</div>
+</div>
+            </div>
+<!-- end right -->
+</div>
+</div>
+</div>
+
+<!--Blog End-->
+@endsection
